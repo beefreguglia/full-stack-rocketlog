@@ -14,6 +14,9 @@ importers:
       express-async-errors:
         specifier: 3.1.1
         version: 3.1.1(express@4.19.2)
+      zod:
+        specifier: 3.23.8
+        version: 3.23.8
     devDependencies:
       '@types/express':
         specifier: 4.17.21
@@ -484,6 +487,9 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
+  zod@3.23.8:
+    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+
 snapshots:
 
   '@esbuild/aix-ppc64@0.21.5':
@@ -932,3 +938,5 @@ snapshots:
   utils-merge@1.0.1: {}
 
   vary@1.1.2: {}
+
+  zod@3.23.8: {}
