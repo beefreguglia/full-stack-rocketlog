@@ -1,0 +1,20 @@
+{
+  "name": "full-stack-rocket-log",
+  "version": "1.0.0",
+  "description": "Api de entregas de  encomendas",
+  "author": "Bernardo Freguglia",
+  "main": "index.js",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.19.2"
+  },
+  "scripts": {
+    "dev": "tsx --watch src/server.ts"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.21",
+    "@types/node": "20.14.12",
+    "tsx": "4.16.2",
+    "typescript": "5.5.4"
+  }
+}
