@@ -35,6 +35,42 @@ class DeliveryLogsController {
 
     response.status(201).json()
   }
+
+  async show(request: Request, response: Response) {
+    const paramsSchema = z.object({
+      delivery_id: z.string().uuid(),
+    })
+
+    const { delivery_id } = paramsSchema.parse(request.params)
+
+    const delivery = await prisma.delivery.findUnique({
+      where: {
+        id: delivery_id,
+      },
+      include: {
+        logs: true,
+        user: true
+      }
+    })
+
+    if (!delivery) {
+      throw new AppError('Delivery not found.', 404)
+    }
+
+    if(delivery.status === "DELIVERED") {
+      throw new AppError("This order is already been delivered.")
+    }
+    
+    if (
+      request.user?.role === "CUSTOMER" 
+      && 
+      request.user.id !== delivery?.userID
+    ) {
+      throw new AppError("Not allowed.", 401)
+    } 
+
+    return response.json(delivery)
+  }
 }
 
 export { DeliveryLogsController }
