@@ -1,6 +1,7 @@
-import { prisma } from '@/database/prisma'
 import { Request, Response } from 'express'
 import { z } from 'zod'
+
+import { prisma } from '@/database/prisma'
 
 class DeliveriesController {
   async  create(request: Request, response: Response) {
